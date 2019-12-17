@@ -137,8 +137,19 @@ function processProduct(num1, num2, callback) {
  * should return "sad".
  */
 function processContains(item, list, callback) {
-  const itemList = 
+  let bool = list.includes(item);
+  return callback(bool);
 }
+//   let bool = false;
+//   list.forEach(element => {
+//     if (element === item) {
+//       bool = true;
+//     } else {
+//       bool = false;
+//     }
+//   });
+//   return callback(bool);
+// }
 
 /**
  * ### Challenge `processDuplicateFree`
@@ -159,8 +170,13 @@ function processContains(item, list, callback) {
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
  */
-function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
-  /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+function processDuplicateFree(list, callback) {
+  const duplicateFree = new Set(list);
+  const setToArray = [...duplicateFree];
+  return callback(setToArray);
+  // let item = list =>
+  //   list.filter((current, index) => list.indexOf(current) === index);
+  // return callback(item(list));
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
